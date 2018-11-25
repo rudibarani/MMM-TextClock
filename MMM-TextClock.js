@@ -434,92 +434,103 @@ Module.register("MMM-TextClock",{
 			var ul4 = document.createElement("ul");
 			ul4.className = "ul4";
 
-				var li12 = document.createElement("li");
-				li12.className = "li12";
-				li12.innerHTML = this.translate('TWELVE');
-
 				var li2 = document.createElement("li");
 				li2.className = "li2";
-				li2.innerHTML = this.translate('TWO');
+				li2.innerHTML = this.translate("TWO");
+
+				var li7 = document.createElement("li");
+				li7.className = "li7";
+				li7.innerHTML = this.translate("SEVEN");
 
 				var li3 = document.createElement("li");
 				li3.className = "li3";
-				li3.innerHTML = this.translate('THREE');
+				li3.innerHTML = this.translate("THREE");
 
-				ul4.appendChild(li12);
 				ul4.appendChild(li2);
+				ul4.appendChild(li7);
 				ul4.appendChild(li3);
 
 			var ul5 = document.createElement("ul");
 			ul5.className = "ul5";
 
-				var li4 = document.createElement("li");
-				li4.className = "li4";
-				li4.innerHTML = this.translate('FOUR');
+				var li9 = document.createElement("li");
+				li9.className = "li9";
+				li9.innerHTML = this.translate("NINE");
 
 				var li5 = document.createElement("li");
 				li5.className = "li5";
-				li5.innerHTML = this.translate('FIVE');
+				li5.innerHTML = this.translate("FIVE");
 
 				var li6 = document.createElement("li");
 				li6.className = "li6";
-				li6.innerHTML = this.translate('SIX');
+				li6.innerHTML = this.translate("SIX");
 
-				ul5.appendChild(li4);
+				ul5.appendChild(li9);
 				ul5.appendChild(li5);
 				ul5.appendChild(li6);
 
 			var ul6 = document.createElement("ul");
 			ul6.className = "ul6";
 
-				var li7 = document.createElement("li");
-				li7.className = "li7";
-				li7.innerHTML = this.translate('SEVEN');
+				var li12 = document.createElement("li");
+				li12.className = "li12";
+				li12.innerHTML = this.translate("TWELVE");
 
 				var li8 = document.createElement("li");
 				li8.className = "li8";
-				li8.innerHTML = this.translate('EIGHT');
+				li8.innerHTML = this.translate("EIGHT");
 
-				var li9 = document.createElement("li");
-				li9.className = "li9";
-				li9.innerHTML = this.translate('NINE');
+				var li4 = document.createElement("li");
+				li4.className = "li4";
+				li4.innerHTML = this.translate("FOUR");
 
-				ul6.appendChild(li7);
+				ul6.appendChild(li12);
 				ul6.appendChild(li8);
-				ul6.appendChild(li9);
+				ul6.appendChild(li4);
 
 			var ul7 = document.createElement("ul");
 			ul7.className = "ul7";
 
 				var li10 = document.createElement("li");
 				li10.className = "li10";
-				li10.innerHTML = this.translate('TEN');
+				li10.innerHTML = this.translate("TEN");
 
 				var li11 = document.createElement("li");
 				li11.className = "li11";
-				li11.innerHTML = this.translate('ELEVEN');
+				li11.innerHTML = this.translate("ELEVEN");
 
 				var li1 = document.createElement("li");
 				li1.className = "li1";
-				li1.innerHTML = this.translate('ONE');
+				li1.innerHTML = this.translate("ONE");
+
+				var li1S = document.createElement("li");
+				li1S.className = "li1S";
+				li1S.innerHTML = this.translate("S");
 
 				var lioclock = document.createElement("li");
 				lioclock.className = "liocklock";
-				lioclock.innerHTML = this.translate('OCLOCK');
+				lioclock.innerHTML = this.translate("OCLOCK");
 
 				ul7.appendChild(li10);
 				ul7.appendChild(li11);
 				ul7.appendChild(li1);
+				ul7.appendChild(li1S);
 				ul7.appendChild(lioclock);
 
-				if (timeMinute  >= 25 ) {
-					nowplus = moment().add(1, 'h');
-					timeHour = nowplus.format('h');
-					eval("li" + timeHour).style.cssText = this.config.marked;
-				}
-				else {
-					eval("li" + timeHour).style.cssText = this.config.marked;
+			if (timeMinute >= 25) {
+			  nowplus = moment().add(1, "h");
+			  timeHour = nowplus.format("h");
+			  eval("li" + timeHour).style.cssText = this.config.marked;
+			  if (timeHour == 1) {
+			    if (timeMinute >= 0 && timeMinute < 5) {
+			    } else {
+			      eval("li" + timeHour + "S").style.cssText = this.config.marked;
+			    }
+			  }
+			} else {
+			  eval("li" + timeHour).style.cssText = this.config.marked;
 			}
+			
 			if (timeMinute >= 0 && timeMinute < 5) {
 				lioclock.style.cssText = this.config.marked;
 			}
