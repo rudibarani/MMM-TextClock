@@ -28,6 +28,7 @@ git clone https://github.com/brobergp/MMM-TextClock.git # clone this repository
 			to24: "BLOODY", //text between hour and minute
 			after24: "ALREADY?", //text after minute
 			marked: "color: white; font-weight: 400;", //css code to mark current time in Field layout
+			offset: 0 //offset in minutes when to change to next text (0 = late; 2 = fuzzy; 5 = early)
 		}
 },
 ````
@@ -59,3 +60,5 @@ The following properties can be configured:
 | `to24` | The text line between hour and minute |
 | `after24` | The text line after minute |
 | `marked`| The css code to define the style of current time on the clock `Field` |
+| `offset` | Offset in minutes when to change to next text (0 = late; 2 = fuzzy; 5 = early)
+
