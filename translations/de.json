@@ -5,7 +5,7 @@
 "MINUTES": "MINUTEN",
 "TO": "VOR",
 "PAST": "NACH",
-"ONE": "EINS",
+"ONE": "EIN",
 "TWO": "ZWEI",
 "THREE": "DREI",
 "FOUR": "VIER",
@@ -31,5 +31,6 @@
 "FIFTY": "FÜNFZIG",
 "OH": "OH",
 "HUNDRED": "HUNDERT",
-"ZERO": "NULL"
+"ZERO": "NULL",
+"S": "S"
 }
