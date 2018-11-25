@@ -13,6 +13,7 @@ Module.register("MMM-TextClock",{
 		to24: "BLOODY", //text between hour and minute
 		after24: "ALREADY?", //text after minute
 		marked: "color: white; font-weight: 400;", //css code to mark current time in Field layout
+		offset: 0 //offset in minutes when to change to next text (0 = late; 2 = fuzzy; 5 = early)
 	},
 
 	getScripts: function() {
@@ -44,7 +45,7 @@ Module.register("MMM-TextClock",{
 	getDom: function() {
 		var wrapper = document.createElement("div");
 		// set up moment and variables for the clock
-		var now = moment();
+    		var now = moment().add(this.config.offset, "m"); // add offset in Minutes
 		var hourSymbol = "HH";
 		if (this.config.timeFormat !== 24) { hourSymbol = "h";		}
 		timeMinute = now.format("mm");
