@@ -521,16 +521,17 @@ Module.register("MMM-TextClock",{
 			  nowplus = moment().add(1, "h");
 			  timeHour = nowplus.format("h");
 			  eval("li" + timeHour).style.cssText = this.config.marked;
-			  if (timeHour == 1) {
-			    if (timeMinute >= 0 && timeMinute < 5) {
-			    } else {
-			      eval("li" + timeHour + "S").style.cssText = this.config.marked;
-			    }
-			  }
 			} else {
 			  eval("li" + timeHour).style.cssText = this.config.marked;
 			}
-			
+
+			if (timeHour == 1) {
+			  if (timeMinute >= 0 && timeMinute < 5) {
+			  } else {
+			    eval("li" + timeHour + "S").style.cssText = this.config.marked;
+			  }
+			}
+
 			if (timeMinute >= 0 && timeMinute < 5) {
 				lioclock.style.cssText = this.config.marked;
 			}
